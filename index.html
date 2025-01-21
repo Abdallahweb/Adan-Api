@@ -1,4 +1,43 @@
 
 <!DOCTYPE html><html><head> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Adan Api</title> <style>*{margin:0; padding:0; box-sizing: border-box;}.content{background-image: linear-gradient(to top, #000,20%, transparent,#000), url('./mosque.webp'); background-size: cover; background-repeat: no-repeat; background-position:center; height: 100vh; margin: 0%; padding: 0%; width: 100%;}.selector{background-color: rgba(0, 0, 0, 0.3); color: #fff; border-radius: 10px; text-align: center; font-size: 20px; width: 300px; max-width: 400px; outline:none; border:1px solid transparent; cursor:pointer;box-shadow:0px 0px 3px #222}.option{background-color: #111; color: #fff; border-radius: 10px; width: 350px; text-align: center; cursor:pointer}.container{display:flex; margin:50px auto; width: 100%; justify-content:space-between; align-items:center; flex-direction:row-reverse;}.info1,.info2,.info3,.info4,.info5,.info6{width:300px; height:170px; background: linear-gradient(to bottom , rgba(0,0,0,0.6) , transparent); margin:10px; padding:60px 0px 0px 0px; text-align:center; display: none;}.details{color:#fff; padding-right: 20px; padding-bottom:100px; display: none;}#date{color:#fff; text-align:center; margin-top:40px}@media screen and (max-width:650px){.container{flex-direction:column;}.info1,.info2,.info3,.info4,.info5,.info6{margin-top: 20px;}.date{font-size: 25px;}.content{background-image: linear-gradient(to bottom, #000,20%, transparent), url('./mosque.webp'); background-size: cover; background-repeat: no-repeat; background-position:center; height: 100vh; margin: 0%; padding: 0%; width: 100%;height: auto; overflow: hidden}}</style></head><body><div class="content"> <h1 style="color:#fff;text-align:center;padding-top:30px">مواقيت الصلاة</h1> <div style="text-align:center;margin-top: 30px;"> <select onchange="getch(this.value)" class="selector"> <option class="option" value="0">اختر المحافظة</option> <option class="option" value="giza">الجيزة</option> <option class="option" value="cairo">القاهرة</option> <option class="option" value="alex">الاسكندرية</option> <option class="option" value="Tanta">طنطا</option> <option class="option" value="Sharqia">الشرقية</option> <option class="option" value="Suez">السويس</option> <option class="option" value="Minya">المنيا</option> <option class="option" value="Matruh">مرسى مطروح</option> <option class="option" value="Asyut">أسيوط</option> <option class="option" value="Ismailia">الاسماعيلية</option> <option class="option" value="Luxor">الأقصر</option> <option class="option" value="Beheira">البحيرة</option> <option class="option" value="BeniSuef">بني سويف</option> <option class="option" value="Dakahlia">الدقهلية</option> <option class="option" value="Damietta">دمياط</option> <option class="option" value="Faiyum">الفيوم</option> <option class="option" value="KafrElSheikh">كفر الشيخ</option> <option class="option" value="Monufia">المنوفية</option> <option class="option" value="PortSaid">بور سعيد</option> <option class="option" value="Qalyubia">القليوبية</option> </select> <div id="date"> <h1></h1> </div><div class="container"><div class="info1"><h2 class="details">الفجر<br><br><span id="fajr"></span></h2></div><div class="info2"> <h2 class="details">الشروق<br><br><span id="shourouk"></span></h2></div><div class="info3"> <h2 class="details">الظهر<br><br><span id="dhohr"></span></h2></div><div class="info4"> <h2 class="details">العصر<br><br><span id="asr"></span></h2></div><div class="info5"> <h2 class="details">المغرب<br><br><span id="maghreb"></span></h2></div><div class="info6"><h2 class="details">العشاء<br><br><span id="esha"></span></h2> </div></div></div><script src="./query.js"></script><script>$(document).ready(function(){$(".info1").delay(100).slideDown(), $(".info2").delay(120).slideDown(), $(".info3").delay(140).slideDown(), $(".info4").delay(160).slideDown(), $(".info5").delay(180).slideDown(), $(".info6").delay(200).slideDown(), $(".details").fadeIn()})</script><script>function getch(e){let date=document.getElementById("date"); let fajr=document.getElementById("fajr"); let shourouk=document.getElementById("shourouk"); let dhohr=document.getElementById("dhohr"); let asr=document.getElementById("asr"); let maghreb=document.getElementById("maghreb"); let esha=document.getElementById("esha"); let finalUrl=`https://api.aladhan.com/v1/timingsByCity?city='${e}'&country=egypt`; fetch(finalUrl).then((response)=> response.json()).then((data)=>{date.innerHTML=`<h1 class="date"> التاريخ الهجري : ${Object.values(data.data.date)[2].date}</h1>`; fajr.innerText=`${Object.values(data.data.timings)[0]}`; shourouk.innerText=`${Object.values(data.data.timings)[1]}`; dhohr.innerText=`${Object.values(data.data.timings)[2]}`; asr.innerText=`${Object.values(data.data.timings)[3]}`; maghreb.innerText=`${Object.values(data.data.timings)[4]}`; esha.innerText=`${Object.values(data.data.timings)[6]}`;})}</script>
 <div style="z-index: 1000000000000;position: absolute;top: 10px;text-align: center;width: 200px;left:50%;margin-left: -100px;margin-bottom:10px">  <h6 style="color: #fff;font-family: Arial, Helvetica, sans-serif;">Developed By <a href="https://abdallahweb.github.io/resume/" style="color: #fff;font-family: Arial, Helvetica, sans-serif;">Abdallah Fouad</a></h6></div>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script>
+document.onkeydown = function(e) {
+        if (e.ctrlKey && 
+            (e.keyCode === 67 || 
+             e.keyCode === 86 || 
+             e.keyCode === 85 || 
+             e.keyCode === 117)) {
+            return false;
+        } else {
+            return true;
+        }
+};
+$(document).keypress("u",function(e) {
+  if(e.ctrlKey)
+  {
+return false;
+}
+else
+{
+return true;
+}
+});
+
+document.addEventListener("contextmenu", function (e){
+    e.preventDefault();
+}, false);
+
+
+$(document).keydown(function (event) {
+    if (event.keyCode == 123) { // Prevent F12
+        return false;
+    } else if (event.ctrlKey && event.shiftKey && event.keyCode == 73) { // Prevent Ctrl+Shift+I        
+        return false;
+    }
+});
+
+</script>
+
 </body></html>
