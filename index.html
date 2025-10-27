@@ -8,12 +8,27 @@ let maghreb = document.getElementById("maghreb");
 let esha = document.getElementById("esha");
 let finalUrl = `https://api.aladhan.com/v1/timingsByCity?city='${e}'&country=egypt`;
 fetch(finalUrl).then((response) => response.json()).then((data) => {
-date.innerHTML = `<h1 class="date"> التاريخ الهجري : ${Object.values(data.data.date)[2].date}</h1>`;
-fajr.innerText = `${Object.values(data.data.timings)[0]}`;
-shourouk.innerText = `${Object.values(data.data.timings)[1]}`;
-dhohr.innerText = `${Object.values(data.data.timings)[2]}`;
-asr.innerText = `${Object.values(data.data.timings)[3]}`;
-maghreb.innerText = `${Object.values(data.data.timings)[4]}`;
-esha.innerText = `${Object.values(data.data.timings)[6]}`;
+date.innerHTML = `<h1 class="date"> التاريخ الهجري : ${Object.values(data.data.date)[2].date} هجرياً</h1>`;
+fajr.innerText = `${Object.values(data.data.timings)[0]} AM`;
+shourouk.innerText = `${Object.values(data.data.timings)[1]} AM`;
+dhohr.innerText = `${Object.values(data.data.timings)[2]} PM`;
+
+
+let asrdata =  `${Object.values(data.data.timings)[3]}`
+let valAsr = asrdata.slice(0, 2) - 12 ;
+asr.innerText = valAsr + ':' + asrdata.slice(3, 5) + ' PM';
+
+
+
+
+let maghrebdata =  `${Object.values(data.data.timings)[4]}`
+let valMaghreb = maghrebdata.slice(0, 2) - 12 ;
+maghreb.innerText = valMaghreb + ':' + maghrebdata.slice(3, 5) + ' PM';
+
+
+let eshadata =  `${Object.values(data.data.timings)[6]}`
+let valEsha = eshadata.slice(0, 2) - 12 ;
+esha.innerText = valEsha + ':' + eshadata.slice(3, 5) + ' PM';
+
 })
 }</script><div style=z-index:1000000000000;position:absolute;top:10px;text-align:center;width:700px;left:50%;margin-left:-350px;margin-bottom:10px;color:#fff;font-family:Arial,Helvetica,sans-serif!important;font-size:10px!important><h6>Developed By <a href=https://abdallahweb.github.io/resume/ style=color:#fff;font-family:Arial,Helvetica,sans-serif>Abdallah Fouad</a></h6></div><script src=http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script>document.onkeydown=function(e){return!e.ctrlKey||67!==e.keyCode&&86!==e.keyCode&&85!==e.keyCode&&117!==e.keyCode},$(document).keypress("u",function(e){return!e.ctrlKey}),document.addEventListener("contextmenu",function(e){e.preventDefault()},!1),$(document).keydown(function(e){return 123!=e.keyCode&&((!e.ctrlKey||!e.shiftKey||73!=e.keyCode)&&void 0)})</script></body></html>
