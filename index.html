@@ -16,7 +16,7 @@ shourouk.innerText = `${Object.values(data.data.timings)[1]} AM`;
 
 let dhohrdata =  `${Object.values(data.data.timings)[2]}`
 let valDhohr = dhohrdata.slice(0, 2);
-if (valDhohr == 12) {
+if (valDhohr >= 12) {
 dhohr.innerText = valDhohr + ':' + dhohrdata.slice(3, 5) + ' PM';
 }else{
 dhohr.innerText = valDhohr + ':' + dhohrdata.slice(3, 5) + ' AM';
@@ -61,7 +61,7 @@ shourouk.innerText = `${Object.values(data.data.timings)[1]} AM`;
 
 let dhohrdata =  `${Object.values(data.data.timings)[2]}`
 let valDhohr = dhohrdata.slice(0, 2);
-if (valDhohr == 12) {
+if (valDhohr >= 12) {
 dhohr.innerText = valDhohr + ':' + dhohrdata.slice(3, 5) + ' PM';
 }else{
 dhohr.innerText = valDhohr + ':' + dhohrdata.slice(3, 5) + ' AM';
