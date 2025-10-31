@@ -13,13 +13,15 @@ fajr.innerText = `${Object.values(data.data.timings)[0]} AM`;
 shourouk.innerText = `${Object.values(data.data.timings)[1]} AM`;
 
 
+
 let dhohrdata =  `${Object.values(data.data.timings)[2]}`
 let valDhohr = dhohrdata.slice(0, 2);
-if (valDhohr <= 12) {
-dhohr.innerText = valDhohr + ':' + dhohrdata.slice(3, 5) + ' AM';
-}else{
+if (valDhohr == 12) {
 dhohr.innerText = valDhohr + ':' + dhohrdata.slice(3, 5) + ' PM';
+}else{
+dhohr.innerText = valDhohr + ':' + dhohrdata.slice(3, 5) + ' AM';
 }
+
 
 let asrdata =  `${Object.values(data.data.timings)[3]}`
 let valAsr = asrdata.slice(0, 2) - 12 ;
@@ -59,10 +61,10 @@ shourouk.innerText = `${Object.values(data.data.timings)[1]} AM`;
 
 let dhohrdata =  `${Object.values(data.data.timings)[2]}`
 let valDhohr = dhohrdata.slice(0, 2);
-if (valDhohr <= 12) {
-dhohr.innerText = valDhohr + ':' + dhohrdata.slice(3, 5) + ' AM';
-}else{
+if (valDhohr == 12) {
 dhohr.innerText = valDhohr + ':' + dhohrdata.slice(3, 5) + ' PM';
+}else{
+dhohr.innerText = valDhohr + ':' + dhohrdata.slice(3, 5) + ' AM';
 }
 
 
