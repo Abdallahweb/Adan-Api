@@ -11,8 +11,15 @@ fetch(finalUrl).then((response) => response.json()).then((data) => {
 date.innerHTML = `<h1 class="date"> التاريخ الهجري : ${Object.values(data.data.date)[2].date} هجرياً</h1>`;
 fajr.innerText = `${Object.values(data.data.timings)[0]} AM`;
 shourouk.innerText = `${Object.values(data.data.timings)[1]} AM`;
-dhohr.innerText = `${Object.values(data.data.timings)[2]} PM`;
 
+
+let dhohrdata =  `${Object.values(data.data.timings)[2]}`
+let valDhohr = dhohrdata.slice(0, 2);
+if (valDhohr < 12) {
+dhohr.innerText = valDhohr + ':' + dhohrdata.slice(3, 5) + ' AM';
+}else{
+dhohr.innerText = valDhohr + ':' + dhohrdata.slice(3, 5) + ' PM';
+}
 
 let asrdata =  `${Object.values(data.data.timings)[3]}`
 let valAsr = asrdata.slice(0, 2) - 12 ;
@@ -47,7 +54,16 @@ fetch(finalUrl).then((response) => response.json()).then((data) => {
 date.innerHTML = `<h1 class="date"> التاريخ الهجري : ${Object.values(data.data.date)[2].date} هجرياً</h1>`;
 fajr.innerText = `${Object.values(data.data.timings)[0]} AM`;
 shourouk.innerText = `${Object.values(data.data.timings)[1]} AM`;
-dhohr.innerText = `${Object.values(data.data.timings)[2]} PM`;
+
+
+
+let dhohrdata =  `${Object.values(data.data.timings)[2]}`
+let valDhohr = dhohrdata.slice(0, 2);
+if (valDhohr < 12) {
+dhohr.innerText = valDhohr + ':' + dhohrdata.slice(3, 5) + ' AM';
+}else{
+dhohr.innerText = valDhohr + ':' + dhohrdata.slice(3, 5) + ' PM';
+}
 
 
 let asrdata =  `${Object.values(data.data.timings)[3]}`
