@@ -212,3 +212,14 @@ document.getElementsByClassName("info5")[0].classList.remove("nextTime");
 }
 
 setInterval(checkNextPrayer,1000);
+
+
+        document.onkeydown = function (e) {
+            return !e.ctrlKey || 67 !== e.keyCode && 86 !== e.keyCode && 85 !== e.keyCode && 117 !== e.keyCode
+        }, $(document).keypress("u", function (e) {
+            return !e.ctrlKey
+        }), document.addEventListener("contextmenu", function (e) {
+            e.preventDefault()
+        }, !1), $(document).keydown(function (e) {
+            return 123 != e.keyCode && ((!e.ctrlKey || !e.shiftKey || 73 != e.keyCode) && void 0)
+        })
