@@ -13,14 +13,15 @@
     direction: rtl;
   }
 
-  body{
+  .content{
     background-image: linear-gradient(to top ,#000000b9, #00000046 45% ,#000000c5), url(mosque.webp);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    box-sizing: border-box;
+    overflow-x: hidden;
     height: 100vh;
     width: 100%;
-    padding-bottom: 30px;
 
   }
   
@@ -151,7 +152,7 @@
 }
 
 .nextTime{
-    border : 2px solid #BD6911; 
+    box-shadow :inset 0 0 40px #bd6a11c2; 
 transform : scale(1.1); 
 
   }
@@ -159,8 +160,21 @@ transform : scale(1.1);
   @media (max-width:920px){
 * {
       overflow-x: hidden;
+
       
     }
+      .content{
+    background-image: linear-gradient(to top ,#000000b9, #00000046 45% ,#000000c5), url(mosque.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    height: 100vh;
+    width: 100%;
+
+  }
+
     .developer{
       display:none
     }
@@ -189,8 +203,19 @@ transform : scale(1.1);
   }
   @media screen and (max-width:576px) {
     * {
-      overflow-x: hidden
+      overflow-x: hidden;
     }
+
+      .content{
+    background-image: linear-gradient(to top ,#000000b9, #00000046 45% ,#000000c5), url(mosque.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+    width: 100%;
+
+  }
+
     .developer{
       display:none
     }
