@@ -192,7 +192,7 @@ document.getElementsByClassName("info5")[0].classList.remove("nextTime");
     let msg = "";
 
     if (diff <= 0) {
-        msg = "🔔 حان الآن موعد صلاة " + nextName;
+        msg = "🛎️ حان الآن موعد صلاة " + nextName;
 
     }
     else if (hours === 0 && minutes <= 5) {
